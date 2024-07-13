@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "892946571197",
+    "project_id": "gamifier-hackathon",
+    "storage_bucket": "gamifier-hackathon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892946571197:android:d6df7a1ab59307f91ebcd4",
+        "android_client_info": {
+          "package_name": "com.example.societe_generale_client"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo9Dp8vevpmDSVPCYo-jUB_XbDWYW2JnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892946571197:android:f9fb116e8652ab641ebcd4",
+        "android_client_info": {
+          "package_name": "com.example.societe_generale_gamification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo9Dp8vevpmDSVPCYo-jUB_XbDWYW2JnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

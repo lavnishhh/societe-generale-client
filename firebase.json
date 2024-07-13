@@ -1,0 +1,41 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "gamifier-hackathon",
+          "appId": "1:892946571197:android:d6df7a1ab59307f91ebcd4",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "gamifier-hackathon",
+          "configurations": {
+            "android": "1:892946571197:android:d6df7a1ab59307f91ebcd4",
+            "ios": "1:892946571197:ios:77f67a5c2f25016a1ebcd4",
+            "web": "1:892946571197:web:624abe442cfbd6ea1ebcd4"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "asia-east1"
+    }
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
