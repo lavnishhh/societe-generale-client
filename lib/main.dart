@@ -1,7 +1,10 @@
 import 'dart:convert';
+import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:societe_generale_client/helpers/general.dart';
 import 'package:societe_generale_client/screens/dashboard_screen.dart';
 import 'package:societe_generale_client/screens/login_screen.dart';
 import 'package:societe_generale_client/screens/test_screen.dart';
@@ -23,7 +26,37 @@ Future<void> main() async {
   }
   await LocalStorage().initialize();
 
+
   runApp(const MyApp());
+}
+
+Future<void> addScoresToTests() async {
+  // Initialize Firebase
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  // Step 1: Fetch document IDs from 'user' collection
+  QuerySnapshot userSnapshot = await firestore.collection('user').get();
+
+  // Step 2: Iterate through each user document
+  for (var userDoc in userSnapshot.docs) {
+    String userId = userDoc.id;
+
+    // Step 3: Fetch corresponding test document from 'tests' collection
+    DocumentSnapshot testDoc = await firestore.collection('tests').doc(userId).get();
+
+    // Step 4: Generate a random score (multiple of 500)
+    Random random = Random();
+    int score = random.nextInt(21) * 500; // Generates a random score between 0 and 10000 in steps of 500
+
+    // Step 5: Update 'scores' subcollection inside the test document
+    await testDoc.reference.collection('scores').doc(userId).set({
+      'score': score,
+    });
+
+    print('Added score $score for test ${testDoc.id}');
+  }
+
+  print('All scores added successfully');
 }
 
 class MyApp extends StatelessWidget {
@@ -32,6 +65,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
 
     Widget nextScreen = const LoginScreen();
 

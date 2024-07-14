@@ -41,6 +41,7 @@ class _TestScreenState extends State<TestScreen> {
                 return const Center(child: CircularProgressIndicator());
               }
               Map<String, dynamic> test = snapshot.data as Map<String, dynamic>;
+              print(test);
               int questionIndex = 0;
               return Column(
                 children: [

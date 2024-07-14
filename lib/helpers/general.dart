@@ -7,6 +7,11 @@ Random _rnd = Random();
 String getRandomString(int length) => String.fromCharCodes(Iterable.generate(
     length, (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length))));
 
+const _nums = '1234567890';
+
+String getRandomNum(int length) => String.fromCharCodes(Iterable.generate(
+    length, (_) => _nums.codeUnitAt(_rnd.nextInt(_nums.length))));
+
 class AppButton extends StatefulWidget {
   final Widget content;
   final VoidCallback onTap;
